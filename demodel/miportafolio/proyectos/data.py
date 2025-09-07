@@ -1,0 +1,25 @@
+from datetime import datetime
+
+MEDICOS = [
+    {   'id': 1,
+        'nombre': 'Dra. Ana Pérez',
+        'especialidad': 'Cardiología',
+        'horario': datetime(2025, 9, 10, 9, 0),
+        'cupos': 2,
+        'vacaciones': False,
+    },
+    {   'id': 2,
+        'nombre': 'Dr. Luis Gómez',
+        'especialidad': 'Dermatología',
+        'horario': datetime(2025, 9, 10, 10, 30),
+        'cupos': 0,
+        'vacaciones': False,
+    },
+    {   'id': 3,
+        'nombre': 'Dra. Marta Ruiz',
+        'especialidad': 'Pediatría',
+        'horario': datetime(2025, 9, 12, 14, 0),
+        'cupos': 5,
+        'vacaciones': True,
+    },
+]

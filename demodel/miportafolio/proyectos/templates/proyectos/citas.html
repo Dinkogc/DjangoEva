@@ -1,0 +1,28 @@
+{% extends 'proyectos/base.html' %}
+{% block content %}
+    <h2>Agenda de citas</h2>
+
+    {% for medico in medicos %}
+        <div>
+            <h3>{{ medico.nombre }}
+                {% if medico.vacaciones or medico.cupos == 0 %}
+                    <span style="color:red">- No disponible</span>
+                {% endif %}
+            </h3>
+            <p>Especialidad: {{ medico.especialidad }}</p>
+            <p>Horario: {{ medico.horario_str }}</p>
+            <p>Cupos: {{ medico.cupos }}</p>
+
+            {% if not medico.vacaciones and medico.cupos > 0 %}
+                <form method="post" action="{% url 'proyectos:reservar' medico.id %}">
+                    {% csrf_token %}
+                    <input type="email" name="email" required placeholder="tu@correo.cl">
+                    <button type="submit">Reservar</button>
+                </form>
+            {% else %}
+                <em>No es posible reservar</em>
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}
