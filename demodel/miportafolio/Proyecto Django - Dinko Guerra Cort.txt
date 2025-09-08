@@ -1,0 +1,36 @@
+Proyecto Django - Dinko Guerra Cortés
+
+instrucciones. Anotar en la terminal de VSC
+
+1. Acceder al directorio del proyecto ==> cd miportafolio
+2. Instalar Babel (para formatear la fecha y hora de manera localizada en español) ==> pip install babel
+3. Aplicar las migraciones ==> python manage.py migrate
+4. Iniciar el servidor ==> Python manage.py runserver
+
+Estructura del proyecto
+
+miportafolio/
+│
+├── manage.py
+├── miportafolio/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+└── proyectos/
+    ├── __init__.py
+    ├── views.py
+    ├── urls.py
+    ├── tests.py
+    ├── apps.py
+    ├── admin.py
+    ├── data.py
+    ├── models.py
+    └── templates/
+        └── proyectos/
+            ├── base.html
+            ├── home.html
+            ├── confirmation.html
+            └── citas.html
